@@ -28,7 +28,7 @@ echo Launching the AI Server...
 START start_toon_valley_ai_server.bat
 cd ..
 SET TT_GAMESERVER=127.0.0.1
-timeout 4
+timeout 3
 goto game
 
 :game
