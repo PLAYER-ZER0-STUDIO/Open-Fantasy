@@ -1678,10 +1678,10 @@ AV_TOUCH_CHECK_TIMELIMIT_CL = 0.002
 AV_TOUCH_COUNT_LIMIT = 5
 AV_TOUCH_COUNT_TIME = 300
 
-BugReportSite = 'https://www.github.com/ThePlayerZero/Open-Fantasy/issues/new'
+BugReportSite = 'https://github.com/Arbitrium-Studios/Open-Fantasy/issues/new'
 
 
-openDiscord = 'https://discord.gg/jy628fW'
+openDiscord = 'https://discord.com/invite/5xmBA8stzY'
 
 # TELEPORT_BUTTON_DEFAULT_COST = 50
 # TELEPORT_BUTTON_COSTS = {

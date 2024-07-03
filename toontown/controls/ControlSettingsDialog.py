@@ -1,10 +1,7 @@
 from direct.gui.DirectGui import *
 from direct.directnotify import DirectNotifyGlobal
-
 from otp.otpbase import OTPLocalizer
-
 from panda3d.core import *
-
 from toontown.toonbase import TTLocalizer
 from toontown.toonbase import ToontownGlobals
 
@@ -130,7 +127,16 @@ class ControlSettingsDialog(DirectFrame):
         if hasattr(base, 'localAvatar') and hasattr(base.localAvatar, 'chatMgr') and base.localAvatar.chatMgr:
             base.localAvatar.chatMgr.setBackgroundFocus(False)
         self.show()
+        self.disableHotkeys()
         return
+
+    def enableHotkeys(self):
+        # Could probably get away with enabling hotkeys & chat with this.
+        pass
+
+    def disableHotkeys(self):
+        # Could probably get away with disabling hotkeys & chat with this.
+        pass
 
     def exit(self):
         base.controlManager.setChanging(False)
@@ -143,12 +149,12 @@ class ControlSettingsDialog(DirectFrame):
             self.button = None
         self.ignoreAll()
         self.hide()
+        self.enableHotkeys()
         return None
 
     def __apply(self):
         self.applyChanges()
         self.infoLabel['text'] = TTLocalizer.ControlSettingsChangesApplied
-        self.exit()
 
     def __cancel(self):
         self.exit()
@@ -241,4 +247,5 @@ class ControlSettingsDialog(DirectFrame):
         base.localAvatar.controlManager.reload()
         base.reloadControls()
         base.localAvatar.controlManager.disable()
+        self.exit()
 

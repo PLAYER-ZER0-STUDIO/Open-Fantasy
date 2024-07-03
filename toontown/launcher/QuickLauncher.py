@@ -39,7 +39,7 @@ class QuickLauncher(LauncherBase):
         return self.getValue('GAME_SERVER', '')
 
     def getLogFileName(self):
-        return 'toontown'
+        return 'pzs_TTFan_gl'
 
     def getBlue(self):
         blue = self.getValue(self.toontownBlueKey)
