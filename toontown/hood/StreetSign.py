@@ -8,9 +8,9 @@ class StreetSign(DistributedObject.DistributedObject):
     RedownloadTaskName = 'RedownloadStreetSign'
     StreetSignFileName = config.GetString(
         'street-sign-filename', 'street-sign.jpg')
-    StreetSignBaseDir = config.GetString('street-sign-base-dir', '') # Leave this blank
+    StreetSignBaseDir = config.GetString('street-sign-base-dir', 'resources/phase_4/maps')
     StreetSignUrl = base.config.GetString(
-        'street-sign-url', 'https://cdn.arbitriumstudios.com/bf-assets/tl_420b/tnbot/c1_tpott/pzs_ttfan/game/resources/default/english/phase_4/maps') # Leave this without the "/" (which is applied further down) and keep it as the directory the image will be found in otherwise streets will crash.
+        'street-sign-url', 'https://cdn.arbitriumstudios.com/bf-assets/moirai_studio/tlc/tl_420b/books/tnbot/c1_tpott/pzs_ttfan/game/resources/default/english/phase_4/maps/')
     notify = DirectNotifyGlobal.directNotify.newCategory('StreetSign')
 
     def __init__(self):
@@ -29,7 +29,7 @@ class StreetSign(DistributedObject.DistributedObject):
         self.precentDownload = 0.0
         self.startRedownload = datetime.datetime.now()
         self.downloadingStreetSign = True
-        Filename(self.StreetSignBaseDir + '/.').makeDir()
+        Filename(self.StreetSignBaseDir).makeDir()
         http = HTTPClient.getGlobalPtr()
         self.url = self.StreetSignUrl + self.StreetSignFileName
         self.ch = http.makeChannel(True)
