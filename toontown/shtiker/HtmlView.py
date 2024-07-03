@@ -81,8 +81,8 @@ class HtmlView(DirectObject):
     def getInGameNewsUrl(self):
         result = base.config.GetString(
             'fallback-news-url',
-            'http://www.toontownfantasy.com/assets/phase_3/gamenews/')
-        override = base.config.GetString('in-game-news-url', '')
+            'https://web.archive.org/web/20230718194723/http://cdn.toontown.disney.go.com/toontown/en/gamenews/')
+        override = base.config.GetString('in-game-news-url', 'https://cdn.arbitriumstudios.com/bf-assets/tl_420b/tnbot/c1_tpott/pzs_ttfan/game/resources/default/english/phase_3.5/gamenews')
         if override:
             self.notify.info(
                 'got an override url,  using %s for in a game news' %

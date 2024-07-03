@@ -11,6 +11,6 @@
 !define UNINSTALLER_NAME "�A���C���X�g�[��"
 !define UNINSTALL_LINK_NAME "�A���C���X�g�[�� ${PRODUCT_NAME} IE Helper"
 
-!define PRODUCT_WEB_SITE 'http://toontownfantasy.com/'
+!define PRODUCT_WEB_SITE 'https://www.toontownfantasy.com/'
 !define PRODUCT_HELP_LINK "${PRODUCT_WEB_SITE}"
 

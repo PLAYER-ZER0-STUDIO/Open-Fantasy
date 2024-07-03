@@ -21,7 +21,7 @@
 !define PROGRAM "ttinst-helper.exe"
 !define PROGRAM_NAME "ttinst-setup${PRODUCT_RELEASE}.exe"
 
-!define PRODUCT_PUBLISHER "Walt Disney Co."
+!define PRODUCT_PUBLISHER "Arbitrium Studios"
 
 !define WISE_UNINSTALL "UNWISE.EXE"
 
@@ -144,7 +144,7 @@ Section Uninstall
 
   ;Exec "$INSTDIR\${WISE_UNINSTALL}"
 
-  RMDir /r "$LOCALAPPDATA\Disney\Disney Online\Toontown${PRODUCT_RELEASE}"
+  RMDir /r "$LOCALAPPDATA\Arbitrium Studios\PLAYER ZER0 STUDIO\Toontown Fantasy"
   ;RMDir "$SMPROGRAMS\${PROG_GROUPNAME}"
   RMDir "$INSTDIR"
 
