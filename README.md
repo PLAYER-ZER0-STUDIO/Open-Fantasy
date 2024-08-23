@@ -1,4 +1,4 @@
-<img src="https://cdn.arbitriumstudios.com/bf-assets/moirai_studio/tlc/tl_420b/books/tnbot/c1_tpott/pzs_ttfan/game/resources/default/english/phase_3/maps/toontown-logo.png" align="right" width="200" />
+<img src="https://cdn.arbitriumstudios.com/bf_assets/tuou/tl_420/tlv_b/tnbot/c1_tpott/pzs_ttfan/game/resources/default/english/phase_3/maps/toontown-logo.png" align="right" width="200" />
 
 # Toontown-Fantasy [![Discord][discordImg]][discordLink]
 
@@ -36,8 +36,8 @@
 
 ### Patch Notes:
 
-> Check out the Toontown Fantasy Website's [Release Notes](https://www.toontownfantasy.com/toon-hq/Release_Notes) page for the Patch Notes!
+> Check out the Toontown Fantasy Website's [Release Notes](https://toontownfantasy.com/toon_hq/release_notes) page for the Patch Notes!
 
 [discordImg]: https://img.shields.io/discord/775528645086543895.svg?logo=discord&logoWidth=18&colorB=7289DA&Discord-PLAYER%20ZER0%20STUDIOS-7289DA?logo=discord&logoWidth=18&style=for-the-badge
 
-[discordLink]: https://discord.gg/9fgW8jAaf6
+[discordLink]: https://www.discord.com/invite/besx99KFcK

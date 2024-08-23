@@ -10,7 +10,7 @@ class StreetSign(DistributedObject.DistributedObject):
         'street-sign-filename', 'street-sign.jpg')
     StreetSignBaseDir = config.GetString('street-sign-base-dir', 'resources/phase_4/maps')
     StreetSignUrl = base.config.GetString(
-        'street-sign-url', 'https://cdn.arbitriumstudios.com/bf-assets/moirai_studio/tlc/tl_420b/books/tnbot/c1_tpott/pzs_ttfan/game/resources/default/english/phase_4/maps/')
+        'street-sign-url', 'https://cdn.arbitriumstudios.com/bf_assets/tuou/tl_420/tlv_b/tnbot/c1_tpott/pzs_ttfan/game/resources/default/english/phase_4/maps/')
     notify = DirectNotifyGlobal.directNotify.newCategory('StreetSign')
 
     def __init__(self):

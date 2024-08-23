@@ -433,7 +433,7 @@ class DirectNewsFrame(DirectObject.DirectObject):
         result = ConfigVariableString(
             'fallback-news-url',
             'https://web.archive.org/web/20230718194723/http://cdn.toontown.disney.go.com/toontown/en/gamenews/').value # Original fallback-news-url: http://cdn.toontown.disney.go.com/toontown/en/gamenews/
-        override = ConfigVariableString('in-game-news-url', 'https://cdn.arbitriumstudios.com/bf-assets/moirai_studio/tlc/tl_420b/books/tnbot/c1_tpott/pzs_ttfan/game/resources/default/english/phase_3.5/gamenews/').value # Assets currently missing, while I am grabbing them, it will temporarily fallback to the archive
+        override = ConfigVariableString('in-game-news-url', 'https://cdn.arbitriumstudios.com/bf_assets/tuou/tl_420/tlv_b/tnbot/c1_tpott/pzs_ttfan/game/resources/default/english/phase_3.5/gamenews/').value # Assets currently missing, while I am grabbing them, it will temporarily fallback to the archive
         if override:
             self.notify.info(
                 'got an override url,  using %s for in game news' %
