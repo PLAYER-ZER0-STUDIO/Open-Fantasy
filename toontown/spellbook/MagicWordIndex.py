@@ -834,7 +834,7 @@ class SetMaxBankMoney(MagicWord):
 
 class GivePies(MagicWord):
     desc = 'Gives the target the specified pie type.'
-    aliases = ['pie', 'pies', 'givepie']
+    aliases = ['give', 'pie', 'pies', 'givepie']
     arguments = [('type', str, True)]
     execLocation = MagicWordConfig.EXEC_LOC_SERVER
     accessLevel = 'DEVELOPER'
@@ -860,6 +860,9 @@ class GivePies(MagicWord):
         toon.b_setNumPies(toon.numPies + count)
         response = 'Set pies to {0} with num of {1}'.format(
             toon.getPieType(), toon.getNumPies())
+        
+        # if _type is not None:
+        #         return "Invalid Pie type!"
         return response
 
 
