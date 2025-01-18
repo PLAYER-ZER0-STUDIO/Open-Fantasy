@@ -2068,33 +2068,29 @@ def doGlowerPower(attack):
 def doWindsor(attack):
     suit = attack['suit']
     battle = attack['battle']
-    targets = attack['target']
+    target = attack['target']
+    toon = target[0]['toon']
+    tie = globalPropPool.getProp('%s-windsor' % ('double' if attack['id'] == DOUBLE_WINDSOR else 'half'))
     throwDelay = 2.17
     damageDelay = 3.4
     dodgeDelay = 2.4
     suitTrack = getSuitTrack(attack)
     posPoints = [Point3(0.02, 0.88, 0.48), VBase3(99, -3, -108.2)]
-    tiePropTracks = Parallel()
-    for t in targets:
-        toon = t['toon']
-        tie = globalPropPool.getProp('%s-windsor' % ('double' if attack['id'] == DOUBLE_WINDSOR else 'half'))
-        tiePropTrack = getPropAppearTrack(tie, suit.getRightHand(), posPoints, 0.5, Point3(7, 7, 7), scaleUpTime=0.5)
-        tiePropTrack.append(Wait(throwDelay))
-        missPoint = __toonMissBehindPoint(toon, parent=battle)
-        missPoint.setX(missPoint.getX() - 1.1)
-        missPoint.setZ(missPoint.getZ() + 4)
-        hitPoint = __toonFacePoint(toon, parent=battle)
-        hitPoint.setX(hitPoint.getX() - 1.1)
-        hitPoint.setY(hitPoint.getY() - 0.7)
-        hitPoint.setZ(hitPoint.getZ() + 0.9)
-        tiePropTrack.append(getPropThrowTrack(attack, tie, [hitPoint], [missPoint], hitDuration=0.4, missDuration=0.8, missScaleDown=0.3, parent=battle, target=t))
-        tiePropTracks.append(tiePropTrack)
-    
+    tiePropTrack = getPropAppearTrack(tie, suit.getRightHand(), posPoints, 0.5, Point3(7, 7, 7), scaleUpTime=0.5)
+    tiePropTrack.append(Wait(throwDelay))
+    missPoint = __toonMissBehindPoint(toon, parent=battle)
+    missPoint.setX(missPoint.getX() - 1.1)
+    missPoint.setZ(missPoint.getZ() + 4)
+    hitPoint = __toonFacePoint(toon, parent=battle)
+    hitPoint.setX(hitPoint.getX() - 1.1)
+    hitPoint.setY(hitPoint.getY() - 0.7)
+    hitPoint.setZ(hitPoint.getZ() + 0.9)
+    tiePropTrack.append(getPropThrowTrack(attack, tie, [hitPoint], [missPoint], hitDuration=0.4, missDuration=0.8, missScaleDown=0.3, parent=battle))
     damageAnims = [['conked', 0.01, 0.01, 0.4],
      ['cringe', 0.01, 0.7]]
-    toonTracks = getToonTracks(attack, damageDelay=damageDelay, splicedDamageAnims=damageAnims, dodgeDelay=dodgeDelay, dodgeAnimNames=['sidestep'])
+    toonTrack = getToonTrack(attack, damageDelay=damageDelay, splicedDamageAnims=damageAnims, dodgeDelay=dodgeDelay, dodgeAnimNames=['sidestep'])
     throwSound = getSoundTrack('SA_powertie_throw.ogg', delay=throwDelay + 1, node=suit)
-    return Parallel(suitTrack, toonTracks, tiePropTracks, throwSound)
+    return Parallel(suitTrack, toonTrack, tiePropTrack, throwSound)
 
 
 def doHeadShrink(attack):
