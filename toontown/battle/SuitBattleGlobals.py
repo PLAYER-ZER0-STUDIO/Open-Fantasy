@@ -108,10 +108,11 @@ def getSuitAttack(suitName, suitLevel, attackNum=-1):
     adict['hp'] = attack[1][suitLevel]
     adict['acc'] = attack[2][suitLevel]
     adict['freq'] = attack[3][suitLevel]
+    # As far as we should be concerned, Toontown Fantasy will be single-player only, meaning none of the attacks will have to be ATK_TGT_GROUP.  I would still like to keep this in case we want to do some other interesting things, like making an attack affect a Cog.
     if len(attack) > 4:
         adict['group'] = attack[4]
     else:
-        adict['group'] = SuitAttacks[name][1] # Will fully remove later.
+        adict['group'] = SuitAttacks[name][1]
     return adict
 
 
